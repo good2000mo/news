@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 2.11.11.3
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 建立日期: Oct 14, 2011, 01:54 PM
--- 伺服器版本: 5.1.34
--- PHP 版本: 5.2.9
+-- 建立日期: Oct 18, 2011, 12:33 AM
+-- 伺服器版本: 5.1.44
+-- PHP 版本: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -204,7 +204,7 @@ INSERT INTO `config` (`conf_name`, `conf_value`) VALUES
 ('attach_always_deny', 'html,htm,php,php3,php4,exe,com,bat'),
 ('attach_basefolder', 'extensions/extensions/attachments/'),
 ('attach_create_orphans', '1'),
-('attach_icon_folder', 'http://www.cdsj.edu.mo/news/extensions/pun_attachment/img/'),
+('attach_icon_folder', 'extensions/pun_attachment/img/'),
 ('attach_icon_extension', 'txt,doc,pdf,wav,mp3,ogg,avi,mpg,mpeg,png,jpg,jpeg,gif'),
 ('attach_icon_name', 'text.png,doc.png,doc.png,audio.png,audio.png,audio.png,video.png,video.png,video.png,image.png,image.png,image.png,image.png'),
 ('attach_subfolder', 'dbfa31b307488c6098e42277f546232b'),
@@ -386,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `online` (
 --
 
 INSERT INTO `online` (`user_id`, `ident`, `logged`, `idle`, `csrf_token`, `prev_url`, `last_post`, `last_search`) VALUES
-(1, '192.168.211.253', 1318571207, 0, 'c720053bef3d5da2b7f784da61346f3288084394', 'http://www.cdsj.edu.mo/news/index.php', NULL, NULL);
+(2, 'admin', 1318896637, 0, '571882fb2d679de98fd0c55472d1a87ac784f09f', 'http://127.0.0.1/news/?login=1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -688,4 +688,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `group_id`, `username`, `password`, `salt`, `email`, `title`, `realname`, `url`, `jabber`, `icq`, `msn`, `aim`, `yahoo`, `location`, `signature`, `disp_topics`, `disp_posts`, `email_setting`, `notify_with_post`, `auto_notify`, `show_smilies`, `show_img`, `show_img_sig`, `show_avatars`, `show_sig`, `access_keys`, `timezone`, `dst`, `time_format`, `date_format`, `language`, `style`, `num_posts`, `last_post`, `last_search`, `last_email_sent`, `registered`, `registration_ip`, `last_visit`, `admin_note`, `activate_string`, `activate_key`, `pun_bbcode_enabled`, `pun_bbcode_use_buttons`) VALUES
 (1, 2, 'Guest', 'Guest', NULL, 'Guest', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 'English', 'Oxygen', 0, NULL, NULL, NULL, 0, '0.0.0.0', 0, NULL, NULL, NULL, 1, 1),
-(2, 1, 'admin', '433a6f8bf4386a23b9c5cdc18b49af993d4e597a', 'Zq|<""ySRi\\2', 'comus@cdsj.edu.mo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, 1, 1, 0, 1, 1, 0, 8, 0, 0, 0, 'Traditional_Chinese', 'Oxygen', 1, 1318467786, NULL, NULL, 1318467786, '127.0.0.1', 1318571201, NULL, NULL, NULL, 1, 1);
+(2, 1, 'admin', '433a6f8bf4386a23b9c5cdc18b49af993d4e597a', 'Zq|<""ySRi\\2', 'comus@cdsj.edu.mo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, 1, 1, 0, 1, 1, 0, 8, 0, 0, 0, 'Traditional_Chinese', 'Oxygen', 1, 1318467786, NULL, NULL, 1318467786, '127.0.0.1', 1318573642, NULL, NULL, NULL, 1, 1);
