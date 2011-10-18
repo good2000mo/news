@@ -20,14 +20,14 @@ function attach_icon($file_ext)
 	if ($forum_user['show_img'] == 0 || $forum_config['attach_use_icon'] == 0)
 		return '';
 
-	$icon_url = $forum_config['attach_icon_folder'].'unknown.png';
+	$icon_url = $base_url.'/'.$forum_config['attach_icon_folder'].'unknown.png';
 	if (!empty($forum_config['attach_icon_extension']))
 	{
 		$icon_extension = explode(',', $forum_config['attach_icon_extension']);
 		$icon_name = explode(',', $forum_config['attach_icon_name']);
 		$icon_index = array_search($file_ext, $icon_extension);
 		if ($icon_index !== FALSE)
-			$icon_url = $forum_config['attach_icon_folder'].$icon_name[$icon_index];
+			$icon_url = $base_url.'/'.$forum_config['attach_icon_folder'].$icon_name[$icon_index];
 	}
 
 	return '<img src="'.$icon_url.'" width="15" height="15" alt="'.$lang_attach['Attachment icon'].'" />&nbsp;';

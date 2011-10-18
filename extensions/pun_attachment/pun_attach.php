@@ -20,13 +20,13 @@ $pun_attach_errors = array();
 foreach ($names as $icon_name)
 {
 	if (!file_exists(FORUM_ROOT.'extensions/pun_attachment/img/'.$icon_name))
-		$pun_attach_errors['missing_files'][] = '<li class="warn"><span>'.$forum_config['attach_icon_folder'].$icon_name.'</span></li>';
+		$pun_attach_errors['missing_files'][] = '<li class="warn"><span>'.$base_url.'/'.$forum_config['attach_icon_folder'].$icon_name.'</span></li>';
 	else
 	{
-		list($width, $height,,) = getimagesize($forum_config['attach_icon_folder'].$icon_name);
+		list($width, $height,,) = getimagesize($base_url.'/'.$forum_config['attach_icon_folder'].$icon_name);
 
 		if (($width > 20) || ($height > 20))
-			$pun_attach_errors['big_images'][] = '<li class="warn"><span>'.$forum_config['attach_icon_folder'].$icon_name.'</span></li>';
+			$pun_attach_errors['big_images'][] = '<li class="warn"><span>'.$base_url.'/'.$forum_config['attach_icon_folder'].$icon_name.'</span></li>';
 	}
 }
 
@@ -151,8 +151,8 @@ ob_start();
 							<span class="fld-input">
 								<input type="text" id="fld<?php echo ++$forum_page['fld_count'] ?>" name="attach_ext_<?php echo $i ?>" size="10" maxlength="10" value="<?php echo (isset($_POST['attach_ext_'.$i]) ? forum_htmlencode($_POST['attach_ext_'.$i]) : forum_htmlencode($icons[$i])) ?>" />
 								<input type="text" id="fld<?php echo ++$forum_page['fld_count'] ?>" name="attach_ico_<?php echo $i ?>" size="10" maxlength="10" value="<?php echo (isset($_POST['attach_ico_'.$i]) ? forum_htmlencode($_POST['attach_ico_'.$i]) : forum_htmlencode($names[$i])) ?>" />
-								<?php if (!in_array($forum_config['attach_icon_folder'].$names[$i], $big_images) && !in_array($forum_config['attach_icon_folder'].$names[$i], $missing_files)): ?>
-								<span class="fld-input"><img src="<?php echo $forum_config['attach_icon_folder'].$names[$i]; ?>" alt="<?php echo forum_htmlencode($names[$i]); ?>" /></span>
+								<?php if (!in_array($base_url.'/'.$forum_config['attach_icon_folder'].$names[$i], $big_images) && !in_array($base_url.'/'.$forum_config['attach_icon_folder'].$names[$i], $missing_files)): ?>
+								<span class="fld-input"><img src="<?php echo $base_url.'/'.$forum_config['attach_icon_folder'].$names[$i]; ?>" alt="<?php echo forum_htmlencode($names[$i]); ?>" /></span>
 								<?php endif; ?>
 							</span>
 						</div>

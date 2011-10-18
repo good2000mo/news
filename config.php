@@ -8,7 +8,7 @@ $db_password = '23230647';
 $db_prefix = '';
 $p_connect = false;
 
-$base_url = 'http://www.cdsj.edu.mo/news';
+$base_url = 'http://127.0.0.1/news';
 
 $cookie_name = 'forum_cookie_5cfd89';
 $cookie_domain = '';
